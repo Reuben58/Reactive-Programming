@@ -38,6 +38,8 @@ public class MovieInfoControllerIntgTest {
                 new MovieInfo(null, "The Dark Knight",
                         2008, List.of("Christian Bale", "HeathLedger"), LocalDate.parse("2008-07-18")),
                 new MovieInfo("abc", "Dark Knight Rises",
+                        2012, List.of("Christian Bale", "Tom Hardy"), LocalDate.parse("2012-07-20")),
+                new MovieInfo("def", "Dark Knight Rises",
                         2012, List.of("Christian Bale", "Tom Hardy"), LocalDate.parse("2012-07-20")));
 
         movieInfoRepository
@@ -187,7 +189,7 @@ public class MovieInfoControllerIntgTest {
 
     @Test
     void getMovieInfoById_1() {
-        var id = "def";
+        var id = "def1";
         webTestClient
                 .get()
                 .uri(MOVIES_INFO_URL + "/{id}", id)
@@ -234,7 +236,7 @@ public class MovieInfoControllerIntgTest {
 
     @Test
     void deleteMovieInfoById() {
-        var id = "abc";
+        var id = "def";
 
         webTestClient
                 .delete()
