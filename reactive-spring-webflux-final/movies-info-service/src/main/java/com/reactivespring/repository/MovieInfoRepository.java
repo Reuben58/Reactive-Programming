@@ -9,5 +9,5 @@ public interface MovieInfoRepository extends ReactiveMongoRepository<MovieInfo, 
 
     Flux<MovieInfo> findByYear(Integer year);
 
-    Mono<MovieInfo> findByName(String name);
+    Mono<MovieInfo> findByName (String name);
 }

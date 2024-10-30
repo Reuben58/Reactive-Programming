@@ -188,8 +188,8 @@ public class MovieInfoControllerIntgTest {
 
 
     @Test
-    void getMovieInfoById_1() {
-        var id = "def1";
+    void getMovieInfoById_IdNotFound() {
+        var id = "unknownId";
         webTestClient
                 .get()
                 .uri(MOVIES_INFO_URL + "/{id}", id)

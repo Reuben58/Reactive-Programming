@@ -123,13 +123,10 @@ public class MoviesInfoRepositoryIntgTest {
 
     @Test
     void findByName() {
+        var movieInfoMono = movieInfoRepository.findByName("The Dark Knight").log();
 
-        var movieInfosMono = movieInfoRepository.findByName("Batman Begins").log();
-
-        StepVerifier.create(movieInfosMono)
+        StepVerifier.create(movieInfoMono)
                 .expectNextCount(1)
                 .verifyComplete();
-
-
     }
 }
